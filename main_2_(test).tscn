@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://cdypi4yf4sx4l"]
+
+[ext_resource type="PackedScene" uid="uid://bir8hgpy2sytk" path="res://block.tscn" id="1_0xpsc"]
+[ext_resource type="Script" uid="uid://c4tpwiy02f8p2" path="res://game_manager.gd" id="2_nhby0"]
+
+[node name="main 2 (test)" type="Node2D" unique_id=1701645893]
+
+[node name="Block" parent="." unique_id=1895391516 instance=ExtResource("1_0xpsc")]
+
+[node name="Block2" parent="." unique_id=588839533 instance=ExtResource("1_0xpsc")]
+
+[node name="Block3" parent="." unique_id=1298214741 instance=ExtResource("1_0xpsc")]
+
+[node name="Block4" parent="." unique_id=456798904 instance=ExtResource("1_0xpsc")]
+
+[node name="GameManager" type="Node" parent="." unique_id=716059066]
+script = ExtResource("2_nhby0")

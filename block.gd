@@ -15,8 +15,8 @@ var time_in_state = 0.0
 
 
 
-const YELLOW_CLICKS = 5
-const RED_CLICKS = 7
+const YELLOW_CLICKS = 3
+const RED_CLICKS = 6
 
 const YELLOW_TIME = 5.0
 const RED_TIME = 5.0
