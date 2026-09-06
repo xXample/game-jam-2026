@@ -30,12 +30,12 @@
 [ext_resource type="AudioStream" uid="uid://pes4jiwbopvt" path="res://audio/Kyoko_1.wav" id="22_1u8w0"]
 [ext_resource type="Texture2D" uid="uid://8lh8mr4efmj8" path="res://night-time-png/Kyoko.png" id="22_ryguw"]
 [ext_resource type="AudioStream" uid="uid://dj741nhfxm7tx" path="res://audio/Kyoko_2.wav" id="23_0odxb"]
-[ext_resource type="AudioStream" uid="uid://b0foql4l3wnwm" path="res://audio/Mirror_1.wav" id="30_ok6jj"]
-[ext_resource type="AudioStream" uid="uid://bclqrb2ol6v8p" path="res://audio/Mirror_2.wav" id="31_facbu"]
 [ext_resource type="PackedScene" uid="uid://bpprykmrdda4v" path="res://dialogue_box.tscn" id="24_a6jrf"]
 [ext_resource type="Script" uid="uid://44x8ig0glm6y" path="res://magic_wand.gd" id="25_xuqvo"]
 [ext_resource type="Texture2D" uid="uid://byd6q1q0noydf" path="res://daytime-pngs/magic-wand.PNG" id="26_qsp4k"]
 [ext_resource type="Texture2D" uid="uid://dpe75xpw1vmhe" path="res://daytime-pngs/magic wand-unclicked.PNG" id="27_kq58d"]
+[ext_resource type="AudioStream" uid="uid://b0foql4l3wnwm" path="res://audio/Mirror_1.wav" id="30_ok6jj"]
+[ext_resource type="AudioStream" uid="uid://bclqrb2ol6v8p" path="res://audio/Mirror_2.wav" id="31_facbu"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_k30ep"]
 size = Vector2(131.5, 110)
@@ -251,6 +251,17 @@ position = Vector2(-16.999977, 41.99997)
 scale = Vector2(0.2870473, 0.3177745)
 texture = ExtResource("11_d13ii")
 
+[node name="yellow_sound" type="AudioStreamPlayer" parent="Mirror" unique_id=910253537]
+stream = ExtResource("30_ok6jj")
+
+[node name="red_sound" type="AudioStreamPlayer" parent="Mirror" unique_id=1881400538]
+stream = ExtResource("31_facbu")
+
+[node name="Green_collision2" type="CollisionShape2D" parent="Mirror" unique_id=1364557278]
+visible = false
+position = Vector2(2, 125)
+shape = SubResource("RectangleShape2D_qsp4k")
+
 [node name="mirror-2" type="TextureRect" parent="." unique_id=2122793531]
 visible = false
 modulate = Color(1, 1, 1, 0.5176471)
@@ -442,15 +453,6 @@ texture = ExtResource("22_ryguw")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1106464354]
 
-[node name="yellow_sound" type="AudioStreamPlayer" parent="Mirror" unique_id=910253537]
-stream = ExtResource("30_ok6jj")
-
-[node name="red_sound" type="AudioStreamPlayer" parent="Mirror" unique_id=1881400538]
-stream = ExtResource("31_facbu")
-
-[node name="Green_collision" type="CollisionShape2D" parent="Mirror" unique_id=654981286]
-position = Vector2(2, 125)
-shape = SubResource("RectangleShape2D_qsp4k")
 [node name="DialogueBox" parent="CanvasLayer" unique_id=212378360 instance=ExtResource("24_a6jrf")]
 
 [node name="MagicWand" type="Area2D" parent="CanvasLayer" unique_id=1454051936]
