@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://wjf62sger0y4"
-path="res://.godot/imported/Untitled_Artwork-10.png-730445399a6b06550a0e73d6ab8aa185.ctex"
+uid="uid://8lh8mr4efmj8"
+path="res://.godot/imported/Kyoko.png-4663ba433ffdef9f95c3e38f92e75f03.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://night-time-png/Untitled_Artwork-10.png"
-dest_files=["res://.godot/imported/Untitled_Artwork-10.png-730445399a6b06550a0e73d6ab8aa185.ctex"]
+source_file="res://night-time-png/Kyoko.png"
+dest_files=["res://.godot/imported/Kyoko.png-4663ba433ffdef9f95c3e38f92e75f03.ctex"]
 
 [params]
 

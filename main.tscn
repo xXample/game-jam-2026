@@ -2,7 +2,8 @@
 
 [ext_resource type="Script" uid="uid://dd7iyriboctgt" path="res://main.gd" id="1_0xm2m"]
 [ext_resource type="Script" uid="uid://dgmkti8ou64v6" path="res://clickable.gd" id="1_ig7tw"]
-[ext_resource type="Texture2D" uid="uid://bbs708a38kg0h" path="res://night-time-png/background.png" id="2_7mycd"]
+[ext_resource type="Texture2D" uid="uid://bbs708a38kg0h" path="res://night-time-png/background-1.png" id="2_7mycd"]
+[ext_resource type="Texture2D" uid="uid://bopacjt1woloh" path="res://png/flashlight-text.jpg" id="3_1bvp3"]
 [ext_resource type="Texture2D" uid="uid://dqamv55a0tt1n" path="res://night-time-png/background-2.png" id="3_dg77c"]
 [ext_resource type="Script" uid="uid://nx1kpbp3tcp2" path="res://madoka.gd" id="4_7mycd"]
 [ext_resource type="Script" uid="uid://b1s35vhshmga4" path="res://point_light_2d.gd" id="4_lquwl"]
@@ -10,26 +11,62 @@
 [ext_resource type="Texture2D" uid="uid://b73igsbexnyqx" path="res://night-time-png/door-splatter.png" id="5_w48qg"]
 [ext_resource type="Texture2D" uid="uid://bsbmc5y4lok41" path="res://night-time-png/door.png" id="6_vivmo"]
 [ext_resource type="Texture2D" uid="uid://diundtlb34klc" path="res://night-time-png/curtains.png" id="7_2cqfq"]
+[ext_resource type="Texture2D" uid="uid://b4o0kheiww4ny" path="res://night-time-png/Mami.png" id="7_getpj"]
 [ext_resource type="Texture2D" uid="uid://h5qap1yhuc3c" path="res://night-time-png/mirror-1.png" id="8_dg77c"]
 [ext_resource type="Texture2D" uid="uid://bqimfugw6fnor" path="res://night-time-png/cabinet.png" id="8_yaehf"]
 [ext_resource type="Texture2D" uid="uid://ojy7lfrlhpu1" path="res://night-time-png/mirror-2.png" id="9_ycdy4"]
+[ext_resource type="Texture2D" uid="uid://wjf62sger0y4" path="res://night-time-png/tray.png" id="10_w48qg"]
+[ext_resource type="Texture2D" uid="uid://m8a7efyh1dei" path="res://night-time-png/madoka-1.png" id="12_cegan"]
+[ext_resource type="Texture2D" uid="uid://c1sj2pv7xbg2g" path="res://night-time-png/background-3.png" id="12_yaehf"]
+[ext_resource type="Texture2D" uid="uid://bsk7bjfmjrkxa" path="res://night-time-png/background-4.png" id="13_074og"]
+[ext_resource type="Texture2D" uid="uid://cmxp4gi0brobb" path="res://night-time-png/madoka-2.png" id="13_82xsv"]
+[ext_resource type="Texture2D" uid="uid://d0thk0qrp0gvf" path="res://night-time-png/madoka-3.png" id="14_82xsv"]
+[ext_resource type="Texture2D" uid="uid://8lh8mr4efmj8" path="res://night-time-png/Kyoko.png" id="22_ryguw"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_k30ep"]
 size = Vector2(131.5, 110)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ycxyu"]
-size = Vector2(130.5, 101.5)
+size = Vector2(240, 367)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_b0why"]
-size = Vector2(127, 82.5)
+size = Vector2(213, 477)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_d13ii"]
+size = Vector2(131.5, 110)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1u8w0"]
+size = Vector2(240, 367)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0odxb"]
+size = Vector2(213, 477)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vjc5p"]
-size = Vector2(130, 92.125)
+size = Vector2(261, 169.0625)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lswn8"]
+size = Vector2(131.5, 110)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_a6jrf"]
+size = Vector2(240, 343)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xuqvo"]
+size = Vector2(213, 477)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qsp4k"]
+size = Vector2(131.5, 110)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kq58d"]
+size = Vector2(240, 367)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_seu75"]
+size = Vector2(213, 477)
 
 [node name="Main" type="Node2D" unique_id=520729202]
 script = ExtResource("1_0xm2m")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=465177587]
+visible = false
 offset_left = 1070.0
 offset_top = 9.0
 offset_right = 1152.0
@@ -43,22 +80,20 @@ offset_bottom = 656.0
 texture = ExtResource("2_7mycd")
 expand_mode = 1
 
-[node name="door-splatter" type="TextureRect" parent="background-1" unique_id=1645199415]
-layout_mode = 0
+[node name="door-splatter" type="TextureRect" parent="." unique_id=1645199415]
 offset_right = 1166.0
 offset_bottom = 654.0
 texture = ExtResource("5_w48qg")
 expand_mode = 1
 
-[node name="night-door" type="TextureRect" parent="background-1/door-splatter" unique_id=1187885862]
+[node name="night-door" type="TextureRect" parent="door-splatter" unique_id=1187885862]
 layout_mode = 0
 offset_right = 1166.0
 offset_bottom = 654.0
 texture = ExtResource("6_vivmo")
 expand_mode = 1
 
-[node name="bed" type="TextureRect" parent="background-1" unique_id=599626735]
-layout_mode = 0
+[node name="bed" type="TextureRect" parent="." unique_id=599626735]
 offset_left = 8.0
 offset_top = 8.0
 offset_right = 1151.0
@@ -66,38 +101,186 @@ offset_bottom = 652.0
 texture = ExtResource("4_ycdy4")
 expand_mode = 1
 
-[node name="curtains" type="TextureRect" parent="background-1" unique_id=172651445]
-layout_mode = 0
-offset_right = 1160.0
-offset_bottom = 648.0
+[node name="Mami" type="Area2D" parent="." unique_id=1038749568]
+position = Vector2(390, 43)
+script = ExtResource("1_ig7tw")
+
+[node name="Green_collision" type="CollisionShape2D" parent="Mami" unique_id=2115689485]
+position = Vector2(2, 125)
+shape = SubResource("RectangleShape2D_k30ep")
+
+[node name="ColorRect" type="ColorRect" parent="Mami/Green_collision" unique_id=387288244]
+visible = false
+offset_left = -102.0
+offset_top = -90.0
+offset_right = 105.0
+offset_bottom = 94.0
+mouse_filter = 2
+color = Color(0, 1, 0, 1)
+
+[node name="Yellow_collision" type="CollisionShape2D" parent="Mami" unique_id=245474747]
+position = Vector2(-199, 288)
+shape = SubResource("RectangleShape2D_ycxyu")
+
+[node name="ColorRect" type="ColorRect" parent="Mami/Yellow_collision" unique_id=1685404393]
+visible = false
+offset_left = -105.25
+offset_top = -93.75
+offset_right = 101.75
+offset_bottom = 90.25
+mouse_filter = 2
+color = Color(1, 1, 0, 1)
+
+[node name="mami-1" type="Sprite2D" parent="Mami/Yellow_collision" unique_id=1754605407]
+position = Vector2(-2, -92)
+scale = Vector2(0.4863932, 0.5446419)
+texture = ExtResource("7_getpj")
+
+[node name="Red_collision" type="CollisionShape2D" parent="Mami" unique_id=59354043]
+position = Vector2(-85, 372)
+shape = SubResource("RectangleShape2D_b0why")
+
+[node name="ColorRect" type="ColorRect" parent="Mami/Red_collision" unique_id=1233730193]
+visible = false
+offset_left = -105.25
+offset_top = -93.75
+offset_right = 101.75
+offset_bottom = 90.25
+mouse_filter = 2
+color = Color(1, 0, 0, 1)
+
+[node name="mami-2" type="Sprite2D" parent="Mami/Red_collision" unique_id=936209841]
+position = Vector2(14.999983, -89)
+scale = Vector2(0.5849935, 0.5446419)
+texture = ExtResource("7_getpj")
+
+[node name="curtains" type="TextureRect" parent="." unique_id=172651445]
+offset_left = 3.0
+offset_top = 10.0
+offset_right = 1163.0
+offset_bottom = 658.0
 texture = ExtResource("7_2cqfq")
 expand_mode = 1
 
-[node name="cabinet" type="TextureRect" parent="background-1" unique_id=1644093528]
-layout_mode = 0
+[node name="cabinet" type="TextureRect" parent="." unique_id=1644093528]
 offset_right = 1160.0
 offset_bottom = 648.0
 texture = ExtResource("8_yaehf")
 expand_mode = 1
 
-[node name="mirror-1" type="TextureRect" parent="background-1" unique_id=858653726]
-layout_mode = 0
+[node name="mirror-1" type="TextureRect" parent="." unique_id=858653726]
+visible = false
 offset_right = 1160.0
 offset_bottom = 648.0
 texture = ExtResource("8_dg77c")
 expand_mode = 1
 
-[node name="mirror-2" type="TextureRect" parent="background-1" unique_id=2122793531]
-layout_mode = 0
-offset_right = 1160.0
+[node name="mirror-2" type="TextureRect" parent="." unique_id=2122793531]
+visible = false
+offset_left = -4.0
+offset_right = 1156.0
 offset_bottom = 648.0
 texture = ExtResource("9_ycdy4")
 expand_mode = 1
 
+[node name="tray" type="TextureRect" parent="." unique_id=863698398]
+visible = false
+offset_right = 1160.0
+offset_bottom = 648.0
+texture = ExtResource("10_w48qg")
+expand_mode = 1
+
+[node name="Madoka" type="Area2D" parent="." unique_id=1528871679]
+visible = false
+position = Vector2(132, 40)
+script = ExtResource("4_7mycd")
+
+[node name="Green_collision" type="CollisionShape2D" parent="Madoka" unique_id=937704843]
+position = Vector2(-35.75, 88)
+shape = SubResource("RectangleShape2D_d13ii")
+
+[node name="ColorRect" type="ColorRect" parent="Madoka/Green_collision" unique_id=2122062879]
+visible = false
+offset_left = -69.25
+offset_top = -54.0
+offset_right = 64.75
+offset_bottom = 54.0
+mouse_filter = 2
+color = Color(0, 1, 0, 1)
+
+[node name="Yellow_collision" type="CollisionShape2D" parent="Madoka" unique_id=604124941]
+position = Vector2(325.5, 212)
+shape = SubResource("RectangleShape2D_1u8w0")
+
+[node name="madoka-1" type="Sprite2D" parent="Madoka/Yellow_collision" unique_id=2138706212]
+position = Vector2(216.62502, 20.500015)
+scale = Vector2(0.3925781, 0.4138889)
+texture = ExtResource("12_cegan")
+
+[node name="ColorRect" type="ColorRect" parent="Madoka/Yellow_collision" unique_id=1547769829]
+visible = false
+offset_left = -53.0
+offset_top = -48.0
+offset_right = 60.0
+offset_bottom = 43.0
+mouse_filter = 2
+color = Color(1, 1, 0, 1)
+
+[node name="Red_collision" type="CollisionShape2D" parent="Madoka" unique_id=2027534067]
+position = Vector2(339, 369)
+shape = SubResource("RectangleShape2D_0odxb")
+
+[node name="madoka-2" type="Sprite2D" parent="Madoka/Red_collision" unique_id=1127750089]
+position = Vector2(-45.36476, -0.06855202)
+scale = Vector2(0.44962004, 0.5019787)
+texture = ExtResource("13_82xsv")
+
+[node name="ColorRect" type="ColorRect" parent="Madoka/Red_collision" unique_id=834639529]
+visible = false
+offset_left = -59.0
+offset_top = -38.0
+offset_right = 61.0
+offset_bottom = 37.0
+mouse_filter = 2
+color = Color(1, 0, 0, 1)
+
+[node name="Pink_collision" type="CollisionShape2D" parent="Madoka" unique_id=226126521]
+position = Vector2(436.5, 392.53125)
+shape = SubResource("RectangleShape2D_vjc5p")
+
+[node name="madoka-3" type="Sprite2D" parent="Madoka/Pink_collision" unique_id=280462238]
+position = Vector2(-544.5, 57.468754)
+scale = Vector2(0.8458333, 0.9261978)
+texture = ExtResource("14_82xsv")
+
+[node name="ColorRect" type="ColorRect" parent="Madoka/Pink_collision" unique_id=550469678]
+visible = false
+offset_left = -20.0
+offset_top = -43.9375
+offset_right = 94.0
+offset_bottom = 36.0625
+color = Color(0.9279861, 3.0611158e-05, 0.66056615, 1)
+
 [node name="background-2" type="TextureRect" parent="." unique_id=587005447]
+visible = false
 offset_right = 1158.0
 offset_bottom = 655.0
 texture = ExtResource("3_dg77c")
+expand_mode = 1
+
+[node name="background-3" type="TextureRect" parent="." unique_id=2061445622]
+visible = false
+offset_right = 1158.0
+offset_bottom = 655.0
+texture = ExtResource("12_yaehf")
+expand_mode = 1
+
+[node name="background-4" type="TextureRect" parent="." unique_id=1387972470]
+visible = false
+modulate = Color(1, 1, 1, 0.31764707)
+offset_right = 1158.0
+offset_bottom = 655.0
+texture = ExtResource("13_074og")
 expand_mode = 1
 
 [node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=1016719170]
@@ -107,7 +290,7 @@ color = Color(0.104499996, 0.104499996, 0.11, 0.7372549)
 [node name="PointLight2D" type="PointLight2D" parent="." unique_id=202398473]
 position = Vector2(-1, 0)
 energy = 0.2
-texture = ExtResource("8_dg77c")
+texture = ExtResource("3_1bvp3")
 offset = Vector2(-0.24, 0)
 texture_scale = 2.0
 script = ExtResource("4_lquwl")
@@ -117,107 +300,14 @@ wait_time = 120.0
 one_shot = true
 autostart = true
 
-[node name="Madoka" type="Area2D" parent="." unique_id=1528871679]
-visible = false
-position = Vector2(132, 40)
-script = ExtResource("4_7mycd")
-
-[node name="Green_collision" type="CollisionShape2D" parent="Madoka" unique_id=937704843]
-position = Vector2(-35.75, 88)
-shape = SubResource("RectangleShape2D_k30ep")
-
-[node name="ColorRect" type="ColorRect" parent="Madoka/Green_collision" unique_id=2122062879]
-offset_left = -69.25
-offset_top = -54.0
-offset_right = 64.75
-offset_bottom = 54.0
-mouse_filter = 2
-color = Color(0, 1, 0, 1)
-
-[node name="Yellow_collision" type="CollisionShape2D" parent="Madoka" unique_id=604124941]
-position = Vector2(-35, 210)
-shape = SubResource("RectangleShape2D_ycxyu")
-
-[node name="ColorRect" type="ColorRect" parent="Madoka/Yellow_collision" unique_id=1547769829]
-offset_left = -53.0
-offset_top = -48.0
-offset_right = 60.0
-offset_bottom = 43.0
-mouse_filter = 2
-color = Color(1, 1, 0, 1)
-
-[node name="Red_collision" type="CollisionShape2D" parent="Madoka" unique_id=2027534067]
-position = Vector2(-33, 321)
-shape = SubResource("RectangleShape2D_b0why")
-
-[node name="ColorRect" type="ColorRect" parent="Madoka/Red_collision" unique_id=834639529]
-offset_left = -59.0
-offset_top = -38.0
-offset_right = 61.0
-offset_bottom = 37.0
-mouse_filter = 2
-color = Color(1, 0, 0, 1)
-
-[node name="Pink_collision" type="CollisionShape2D" parent="Madoka" unique_id=226126521]
-position = Vector2(-32, 428.9375)
-shape = SubResource("RectangleShape2D_vjc5p")
-
-[node name="ColorRect" type="ColorRect" parent="Madoka/Pink_collision" unique_id=550469678]
-offset_left = -57.0
-offset_top = -39.9375
-offset_right = 57.0
-offset_bottom = 40.0625
-color = Color(0.9279861, 3.0611158e-05, 0.66056615, 1)
-
-[node name="Mami" type="Area2D" parent="." unique_id=1038749568]
-visible = false
-position = Vector2(390, 43)
-script = ExtResource("1_ig7tw")
-
-[node name="Green_collision" type="CollisionShape2D" parent="Mami" unique_id=2115689485]
-position = Vector2(2, 125)
-shape = SubResource("RectangleShape2D_k30ep")
-
-[node name="ColorRect" type="ColorRect" parent="Mami/Green_collision" unique_id=387288244]
-offset_left = -102.0
-offset_top = -90.0
-offset_right = 105.0
-offset_bottom = 94.0
-mouse_filter = 2
-color = Color(0, 1, 0, 1)
-
-[node name="Yellow_collision" type="CollisionShape2D" parent="Mami" unique_id=245474747]
-position = Vector2(4.25, 328.75)
-shape = SubResource("RectangleShape2D_ycxyu")
-
-[node name="ColorRect" type="ColorRect" parent="Mami/Yellow_collision" unique_id=1685404393]
-offset_left = -105.25
-offset_top = -93.75
-offset_right = 101.75
-offset_bottom = 90.25
-mouse_filter = 2
-color = Color(1, 1, 0, 1)
-
-[node name="Red_collision" type="CollisionShape2D" parent="Mami" unique_id=59354043]
-position = Vector2(6, 506.75)
-shape = SubResource("RectangleShape2D_b0why")
-
-[node name="ColorRect" type="ColorRect" parent="Mami/Red_collision" unique_id=1233730193]
-offset_left = -105.25
-offset_top = -93.75
-offset_right = 101.75
-offset_bottom = 90.25
-mouse_filter = 2
-color = Color(1, 0, 0, 1)
-
 [node name="Kyoko" type="Area2D" parent="." unique_id=352706588]
-visible = false
 position = Vector2(645, 44)
 script = ExtResource("1_ig7tw")
 
 [node name="Green_collision" type="CollisionShape2D" parent="Kyoko" unique_id=1681073107]
+visible = false
 position = Vector2(2, 125)
-shape = SubResource("RectangleShape2D_k30ep")
+shape = SubResource("RectangleShape2D_lswn8")
 
 [node name="ColorRect" type="ColorRect" parent="Kyoko/Green_collision" unique_id=1005605455]
 offset_left = -102.0
@@ -228,10 +318,11 @@ mouse_filter = 2
 color = Color(0, 1, 0, 1)
 
 [node name="Yellow_collision" type="CollisionShape2D" parent="Kyoko" unique_id=1761422336]
-position = Vector2(4.25, 328.75)
-shape = SubResource("RectangleShape2D_ycxyu")
+position = Vector2(146, 237.5)
+shape = SubResource("RectangleShape2D_a6jrf")
 
 [node name="ColorRect" type="ColorRect" parent="Kyoko/Yellow_collision" unique_id=1391185330]
+visible = false
 offset_left = -105.25
 offset_top = -93.75
 offset_right = 101.75
@@ -239,17 +330,28 @@ offset_bottom = 90.25
 mouse_filter = 2
 color = Color(1, 1, 0, 1)
 
+[node name="kyoko-1" type="Sprite2D" parent="Kyoko/Yellow_collision" unique_id=1811790021]
+position = Vector2(22.000013, -67.00001)
+scale = Vector2(0.24331869, 0.28342173)
+texture = ExtResource("22_ryguw")
+
 [node name="Red_collision" type="CollisionShape2D" parent="Kyoko" unique_id=873957732]
-position = Vector2(6, 506.75)
-shape = SubResource("RectangleShape2D_b0why")
+position = Vector2(124, 261)
+shape = SubResource("RectangleShape2D_xuqvo")
 
 [node name="ColorRect" type="ColorRect" parent="Kyoko/Red_collision" unique_id=1932613068]
+visible = false
 offset_left = -105.25
 offset_top = -93.75
 offset_right = 101.75
 offset_bottom = 90.25
 mouse_filter = 2
 color = Color(1, 0, 0, 1)
+
+[node name="kyoko-2" type="Sprite2D" parent="Kyoko/Red_collision" unique_id=953968471]
+position = Vector2(22.000013, -67.00001)
+scale = Vector2(0.24331869, 0.28342173)
+texture = ExtResource("22_ryguw")
 
 [node name="Mirror" type="Area2D" parent="." unique_id=726571365]
 visible = false
@@ -258,7 +360,7 @@ script = ExtResource("1_ig7tw")
 
 [node name="Green_collision" type="CollisionShape2D" parent="Mirror" unique_id=654981286]
 position = Vector2(2, 125)
-shape = SubResource("RectangleShape2D_k30ep")
+shape = SubResource("RectangleShape2D_qsp4k")
 
 [node name="ColorRect" type="ColorRect" parent="Mirror/Green_collision" unique_id=1569342334]
 offset_left = -102.0
@@ -270,7 +372,7 @@ color = Color(0, 1, 0, 1)
 
 [node name="Yellow_collision" type="CollisionShape2D" parent="Mirror" unique_id=1646963176]
 position = Vector2(4.25, 328.75)
-shape = SubResource("RectangleShape2D_ycxyu")
+shape = SubResource("RectangleShape2D_kq58d")
 
 [node name="ColorRect" type="ColorRect" parent="Mirror/Yellow_collision" unique_id=485426682]
 offset_left = -105.25
@@ -282,7 +384,7 @@ color = Color(1, 1, 0, 1)
 
 [node name="Red_collision" type="CollisionShape2D" parent="Mirror" unique_id=2014869768]
 position = Vector2(6, 506.75)
-shape = SubResource("RectangleShape2D_b0why")
+shape = SubResource("RectangleShape2D_seu75")
 
 [node name="ColorRect" type="ColorRect" parent="Mirror/Red_collision" unique_id=577544779]
 offset_left = -105.25
@@ -292,8 +394,8 @@ offset_bottom = 90.25
 mouse_filter = 2
 color = Color(1, 0, 0, 1)
 
-[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
-[connection signal="input_event" from="Madoka" to="Madoka" method="_on_input_event"]
 [connection signal="input_event" from="Mami" to="Mami" method="_on_input_event"]
+[connection signal="input_event" from="Madoka" to="Madoka" method="_on_input_event"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="input_event" from="Kyoko" to="Kyoko" method="_on_input_event"]
 [connection signal="input_event" from="Mirror" to="Mirror" method="_on_input_event"]

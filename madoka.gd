@@ -21,7 +21,7 @@ func _process(delta: float) -> void:
 		else:
 			$"..".game_over()
 			time_in_danger = 0 #for debugging
-			
+		
 
 	
 func _on_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:

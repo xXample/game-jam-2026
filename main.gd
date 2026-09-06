@@ -4,7 +4,8 @@ extends Node2D
 @onready var mon_2 = $"Mami"
 @onready var mon_3 = $"Kyoko"
 @onready var mon_4 = $"Mirror"
-@onready var monsters = [mon_1, mon_2, mon_3, mon_4]
+#@onready var monsters = [mon_1, mon_2, mon_3, mon_4]
+@onready var monsters = [mon_2]
 var wacks = 20
 
 func _ready() -> void:	
