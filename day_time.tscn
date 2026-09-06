@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://bpprykmrdda4v" path="res://dialogue_box.tscn" id="3_lfvbs"]
 [ext_resource type="Script" uid="uid://44x8ig0glm6y" path="res://magic_wand.gd" id="4_lfvbs"]
 [ext_resource type="Texture2D" uid="uid://dpe75xpw1vmhe" path="res://daytime-pngs/magic wand-unclicked.PNG" id="5_pnqvc"]
-[ext_resource type="Texture2D" uid="uid://bl51swkqurogd" path="res://daytime-pngs/magic wand-hover.PNG" id="6_5vdsq"]
+[ext_resource type="Texture2D" uid="uid://byd6q1q0noydf" path="res://daytime-pngs/magic-wand.PNG" id="5_rvbxq"]
 [ext_resource type="Texture2D" uid="uid://btub6wrfdleoe" path="res://daytime-pngs/mari-doll-unclicked.PNG" id="7_5vdsq"]
 [ext_resource type="Script" uid="uid://4worq0umcysm" path="res://mari_doll.gd" id="7_ngbcl"]
 [ext_resource type="Texture2D" uid="uid://gmudrxmc48ki" path="res://daytime-pngs/mari-doll-hover.PNG" id="9_63gpc"]
@@ -55,7 +55,7 @@ color = Color(0, 0, 0, 0)
 
 [node name="MagicWand" type="Area2D" parent="CanvasLayer" unique_id=382946298]
 script = ExtResource("4_lfvbs")
-normal_texture = ExtResource("6_5vdsq")
+normal_texture = ExtResource("5_rvbxq")
 
 [node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/MagicWand" unique_id=1982025536]
 position = Vector2(3.0002441, 14.000061)
