@@ -215,7 +215,7 @@ mouse_filter = 2
 color = Color(0, 1, 0, 1)
 
 [node name="Yellow_collision" type="CollisionShape2D" parent="Mirror" unique_id=1646963176]
-position = Vector2(-103, 104)
+position = Vector2(-103, 101)
 shape = SubResource("RectangleShape2D_kq58d")
 
 [node name="ColorRect" type="ColorRect" parent="Mirror/Yellow_collision" unique_id=485426682]
@@ -228,13 +228,13 @@ mouse_filter = 2
 color = Color(1, 1, 0, 1)
 
 [node name="mirror-1" type="Sprite2D" parent="Mirror/Yellow_collision" unique_id=240679363]
-modulate = Color(1, 1, 1, 0.34901962)
+modulate = Color(1, 1, 1, 0.49803922)
 position = Vector2(-15.999977, 38)
 scale = Vector2(0.2870473, 0.3177745)
 texture = ExtResource("11_d13ii")
 
 [node name="Red_collision" type="CollisionShape2D" parent="Mirror" unique_id=2014869768]
-position = Vector2(-102, 107)
+position = Vector2(-102, 96)
 shape = SubResource("RectangleShape2D_seu75")
 
 [node name="ColorRect" type="ColorRect" parent="Mirror/Red_collision" unique_id=577544779]
@@ -377,7 +377,7 @@ texture = ExtResource("13_074og")
 expand_mode = 1
 
 [node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=1016719170]
-color = Color(0.104499996, 0.104499996, 0.11, 0.7372549)
+color = Color(0.18431373, 0.047058824, 0.13725491, 0.54901963)
 
 [node name="PointLight2D" type="PointLight2D" parent="." unique_id=202398473]
 position = Vector2(-1, 0)
