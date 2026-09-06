@@ -19,7 +19,7 @@ func _ready():
 	dialogue_box.show_dialogue([
 		"What happened? There's monsters!!!",
 		"Good thing I remember how to use my wand.",
-		"(Click the three dolls with the wand)"
+		"(Click the three(?) monsters with the wand and survive!)"
 	])
 
 func game_over():
