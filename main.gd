@@ -7,20 +7,32 @@ extends Node2D
 @onready var monsters = [mon_1, mon_2, mon_3, mon_4]
 var wacks = 20
 
-func _ready() -> void:
-	print("game_start")
+func _ready() -> void:	
 	pass
+
+func game_over():
+	get_tree().change_scene_to_file("res://Death.tscn")
+	
+func _on_timer_timeout() -> void:
+	get_tree().change_scene_to_file("res://you-win.tscn")
 
 
 const SPAWN_INTERVAL = 2.5
 var spawn_timer = 0
 var wack_timer = 0
 func _process(delta: float) -> void:
+	
+	#TIMER SECTION
+	if not $Timer.is_stopped():
+		print("Time left: ", snapped($Timer.time_left, 1))	
+	
+	#WACK SECTION
 	wack_timer += delta
 	if (wack_timer >= 0.5):	
 		wacks = min(20, wacks + 1)
 		wack_timer = 0
 	
+	#SPAWN SECTION
 	spawn_timer += delta
 	if spawn_timer >= SPAWN_INTERVAL:
 		spawn_timer = 0.0
@@ -45,7 +57,4 @@ func spawn_monsters():
 		var monster = green_monsters.pick_random()
 		monster.make_yellow()
 		green_monsters.erase(monster)
-		
-func game_over():
-	print("Game Over")
-	get_tree().quit()
+	

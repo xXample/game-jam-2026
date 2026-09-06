@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://6f58l64xbk03"]
+
+[ext_resource type="Texture2D" uid="uid://dkbuwftioqw7c" path="res://png/you-win.png" id="1_cyn3l"]
+[ext_resource type="Script" uid="uid://5yibsrwbxh0f" path="res://you_win.gd" id="1_nx6ua"]
+[ext_resource type="Texture2D" uid="uid://ch0ttub6u85ja" path="res://png/restart-button.png" id="3_qxnst"]
+
+[node name="YouWin" type="Node2D" unique_id=438312351]
+script = ExtResource("1_nx6ua")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1546673500]
+offset_right = 1160.0
+offset_bottom = 658.0
+texture = ExtResource("1_cyn3l")
+expand_mode = 1
+
+[node name="TextureButton" type="TextureButton" parent="." unique_id=1164332905]
+offset_left = 386.0
+offset_top = 446.0
+offset_right = 734.0
+offset_bottom = 628.0
+texture_normal = ExtResource("3_qxnst")
+ignore_texture_size = true
+stretch_mode = 0
+
+[connection signal="pressed" from="TextureButton" to="." method="_on_texture_button_pressed"]

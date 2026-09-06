@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://dpvoqb8hhk1gd"]
+
+[ext_resource type="Texture2D" uid="uid://bjfg5h3a1272t" path="res://png/gamE-OVER.PNG" id="1_ivvgi"]
+[ext_resource type="Script" uid="uid://dpk1ce08682f4" path="res://death.gd" id="1_vschc"]
+[ext_resource type="Texture2D" uid="uid://ch0ttub6u85ja" path="res://png/restart-button.png" id="2_vschc"]
+
+[node name="Death_name" type="Node2D" unique_id=152126840]
+script = ExtResource("1_vschc")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1799004319]
+offset_right = 1163.0
+offset_bottom = 657.0
+texture = ExtResource("1_ivvgi")
+expand_mode = 1
+
+[node name="TextureButton" type="TextureButton" parent="." unique_id=1803703079]
+offset_left = 389.0
+offset_top = 440.0
+offset_right = 716.0
+offset_bottom = 609.0
+texture_normal = ExtResource("2_vschc")
+ignore_texture_size = true
+stretch_mode = 0
+
+[connection signal="pressed" from="TextureButton" to="." method="_on_texture_button_pressed"]

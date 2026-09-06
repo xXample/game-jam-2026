@@ -15,6 +15,11 @@ size = Vector2(202, 150.5)
 [node name="Main" type="Node2D" unique_id=520729202]
 script = ExtResource("1_0xm2m")
 
+[node name="Timer" type="Timer" parent="." unique_id=899615212]
+wait_time = 120.0
+one_shot = true
+autostart = true
+
 [node name="Monster_1" type="Area2D" parent="." unique_id=1528871679]
 position = Vector2(132, 40)
 script = ExtResource("1_ig7tw")
@@ -175,6 +180,7 @@ offset_bottom = 90.25
 mouse_filter = 2
 color = Color(1, 0, 0, 1)
 
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="input_event" from="Monster_1" to="Monster_1" method="_on_input_event"]
 [connection signal="input_event" from="Monster_2" to="Monster_2" method="_on_input_event"]
 [connection signal="input_event" from="Monster_3" to="Monster_3" method="_on_input_event"]
