@@ -1,17 +1,25 @@
 [gd_scene format=3 uid="uid://cdypi4yf4sx4l"]
 
-[ext_resource type="PackedScene" uid="uid://bir8hgpy2sytk" path="res://block.tscn" id="1_0xpsc"]
-[ext_resource type="Script" uid="uid://c4tpwiy02f8p2" path="res://game_manager.gd" id="2_nhby0"]
+[ext_resource type="Texture2D" uid="uid://bopacjt1woloh" path="res://png/flashlight-text.jpg" id="3_bs3yj"]
+[ext_resource type="Script" uid="uid://b1s35vhshmga4" path="res://point_light_2d.gd" id="3_nhby0"]
 
 [node name="main 2 (test)" type="Node2D" unique_id=1701645893]
 
-[node name="Block" parent="." unique_id=1895391516 instance=ExtResource("1_0xpsc")]
+[node name="ColorRect" type="ColorRect" parent="." unique_id=948657003]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 1980.0
+offset_bottom = 1040.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(1, 0.5529412, 1, 1)
 
-[node name="Block2" parent="." unique_id=588839533 instance=ExtResource("1_0xpsc")]
+[node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=1484300445]
+color = Color(0.108053125, 0.108053125, 0.114203185, 1)
 
-[node name="Block3" parent="." unique_id=1298214741 instance=ExtResource("1_0xpsc")]
-
-[node name="Block4" parent="." unique_id=456798904 instance=ExtResource("1_0xpsc")]
-
-[node name="GameManager" type="Node" parent="." unique_id=716059066]
-script = ExtResource("2_nhby0")
+[node name="PointLight2D" type="PointLight2D" parent="." unique_id=989593440]
+texture = ExtResource("3_bs3yj")
+offset = Vector2(-0.24, 0)
+texture_scale = 2.0
+script = ExtResource("3_nhby0")
