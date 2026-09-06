@@ -1,0 +1,113 @@
+[gd_scene format=3 uid="uid://uycvwxt47xic"]
+
+[ext_resource type="Texture2D" uid="uid://bt4ogehnetef" path="res://daytime-pngs/day-time.PNG" id="1_5qi6y"]
+[ext_resource type="Script" uid="uid://bmrx38ru3umkh" path="res://day_time.gd" id="1_6r57g"]
+[ext_resource type="PackedScene" uid="uid://bpprykmrdda4v" path="res://dialogue_box.tscn" id="3_lfvbs"]
+[ext_resource type="Script" uid="uid://44x8ig0glm6y" path="res://magic_wand.gd" id="4_lfvbs"]
+[ext_resource type="Texture2D" uid="uid://dpe75xpw1vmhe" path="res://daytime-pngs/magic wand-unclicked.PNG" id="5_pnqvc"]
+[ext_resource type="Texture2D" uid="uid://bl51swkqurogd" path="res://daytime-pngs/magic wand-hover.PNG" id="6_5vdsq"]
+[ext_resource type="Texture2D" uid="uid://btub6wrfdleoe" path="res://daytime-pngs/mari-doll-unclicked.PNG" id="7_5vdsq"]
+[ext_resource type="Script" uid="uid://4worq0umcysm" path="res://mari_doll.gd" id="7_ngbcl"]
+[ext_resource type="Texture2D" uid="uid://gmudrxmc48ki" path="res://daytime-pngs/mari-doll-hover.PNG" id="9_63gpc"]
+[ext_resource type="Texture2D" uid="uid://b4dc8q8n2ismy" path="res://daytime-pngs/mari-doll-clicked.PNG" id="10_6i4ms"]
+[ext_resource type="Script" uid="uid://dor4qu51b3ljm" path="res://madoka_doll.gd" id="11_6i4ms"]
+[ext_resource type="Texture2D" uid="uid://cei6v8qnm4pl2" path="res://daytime-pngs/madoka-clicked.PNG" id="12_n1wel"]
+[ext_resource type="Texture2D" uid="uid://by4gnx4jpjep8" path="res://daytime-pngs/madoka-hover.PNG" id="13_j6urf"]
+[ext_resource type="Texture2D" uid="uid://c1r2qxxy4k7eb" path="res://daytime-pngs/madoka-unclicked.PNG" id="14_j6urf"]
+[ext_resource type="Script" uid="uid://dm3egtcyt82e7" path="res://kyoko_doll.gd" id="15_g837w"]
+[ext_resource type="Texture2D" uid="uid://dhw3hbrcjdxo3" path="res://daytime-pngs/kyoko-unclicked.PNG" id="16_rvbxq"]
+[ext_resource type="Texture2D" uid="uid://dhxg4a5sb52lr" path="res://daytime-pngs/kyoko-hovered.PNG" id="17_8him5"]
+[ext_resource type="Texture2D" uid="uid://mj2mb5xkx52y" path="res://daytime-pngs/kyoko-clicked.PNG" id="18_ygmgx"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_w7my0"]
+size = Vector2(97, 104)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hy57o"]
+size = Vector2(138, 162)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g837w"]
+size = Vector2(147, 146)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ddy2h"]
+size = Vector2(130.5, 167.5)
+
+[node name="DayTime" type="Node2D" unique_id=1266988195]
+script = ExtResource("1_6r57g")
+
+[node name="Background" type="TextureRect" parent="." unique_id=1031153848]
+offset_right = 1153.0
+offset_bottom = 648.0
+texture = ExtResource("1_5qi6y")
+expand_mode = 1
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1092732806]
+
+[node name="FadeRect" type="ColorRect" parent="CanvasLayer" unique_id=231646328]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 0)
+
+[node name="DialogueBox" parent="CanvasLayer" unique_id=212378360 instance=ExtResource("3_lfvbs")]
+
+[node name="MagicWand" type="Area2D" parent="CanvasLayer" unique_id=382946298]
+script = ExtResource("4_lfvbs")
+normal_texture = ExtResource("6_5vdsq")
+
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/MagicWand" unique_id=1982025536]
+position = Vector2(3.0002441, 14.000061)
+rotation = -1.2391838
+scale = Vector2(0.73163843, 0.7291667)
+texture = ExtResource("5_pnqvc")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CanvasLayer/MagicWand" unique_id=1771535768]
+position = Vector2(1, 8)
+shape = SubResource("RectangleShape2D_w7my0")
+
+[node name="MariDoll" type="Area2D" parent="." unique_id=2123887427]
+script = ExtResource("7_ngbcl")
+normal_texture = ExtResource("7_5vdsq")
+hover_texture = ExtResource("9_63gpc")
+clicked_texture = ExtResource("10_6i4ms")
+
+[node name="Sprite2D" type="Sprite2D" parent="MariDoll" unique_id=1317212754]
+position = Vector2(171.99998, 463)
+scale = Vector2(0.565, 0.565)
+texture = ExtResource("7_5vdsq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MariDoll" unique_id=1684659393]
+position = Vector2(177, 459)
+shape = SubResource("RectangleShape2D_hy57o")
+
+[node name="MadokaDoll" type="Area2D" parent="." unique_id=153547873]
+script = ExtResource("11_6i4ms")
+normal_texture = ExtResource("14_j6urf")
+hover_texture = ExtResource("13_j6urf")
+clicked_texture = ExtResource("12_n1wel")
+
+[node name="Sprite2D" type="Sprite2D" parent="MadokaDoll" unique_id=807645408]
+position = Vector2(558.9999, 382)
+scale = Vector2(0.565, 0.565)
+texture = ExtResource("14_j6urf")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MadokaDoll" unique_id=1960232919]
+position = Vector2(557, 378)
+shape = SubResource("RectangleShape2D_g837w")
+
+[node name="KyokoDoll" type="Area2D" parent="." unique_id=1003851829]
+script = ExtResource("15_g837w")
+normal_texture = ExtResource("16_rvbxq")
+hover_texture = ExtResource("17_8him5")
+clicked_texture = ExtResource("18_ygmgx")
+
+[node name="Sprite2D" type="Sprite2D" parent="KyokoDoll" unique_id=1707315629]
+position = Vector2(986, 398.99997)
+scale = Vector2(0.565, 0.565)
+texture = ExtResource("16_rvbxq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="KyokoDoll" unique_id=714762485]
+position = Vector2(989, 398)
+shape = SubResource("RectangleShape2D_ddy2h")
