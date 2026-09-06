@@ -10,7 +10,11 @@ extends Node2D
 #@onready var monsters = [mon_2]
 var wacks = 20
 
+var dialogue_playing = false
+
 func _ready():
+	dialogue_box.dialogue_started.connect(_on_dialogue_started)
+	dialogue_box.dialogue_finished.connect(_on_dialogue_finished)
 	
 	dialogue_box.show_dialogue([
 		"What happened? There's monsters!!!",
@@ -23,6 +27,15 @@ func game_over():
 	
 func _on_timer_timeout() -> void:
 	get_tree().change_scene_to_file("res://you-win.tscn")
+
+
+func _on_dialogue_started():
+	dialogue_playing = true
+	spawn_timer = 0.0
+
+func _on_dialogue_finished():
+	dialogue_playing = false
+	spawn_timer = 0.0
 
 
 const SPAWN_INTERVAL = 2.5
@@ -47,7 +60,9 @@ func _process(delta: float) -> void:
 		wack_timer = 0
 	
 	#SPAWN SECTION
-	spawn_timer += delta
+	if not dialogue_playing:
+		spawn_timer += delta
+	
 	if spawn_timer >= SPAWN_INTERVAL:
 		spawn_timer = 0.0
 		spawn_monsters()

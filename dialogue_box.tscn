@@ -1,10 +1,11 @@
 [gd_scene format=3 uid="uid://bpprykmrdda4v"]
 
 [ext_resource type="Script" uid="uid://cbbtvxmkmhbru" path="res://dialogue_box.gd" id="1_senjy"]
+[ext_resource type="Texture2D" uid="uid://bkyhmh3dl1ydn" path="res://daytime-pngs/chat-box.PNG" id="2_0nste"]
 [ext_resource type="FontFile" uid="uid://bcqsen4nbc4fa" path="res://EmilysCandy-Regular.ttf" id="2_n23yb"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hy57o"]
-bg_color = Color(0.95969003, 0.6025925, 0.7133295, 1)
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_jix8l"]
+texture = ExtResource("2_0nste")
 
 [node name="DialogueBox" type="Control" unique_id=212378360]
 layout_mode = 3
@@ -15,23 +16,25 @@ script = ExtResource("1_senjy")
 
 [node name="Panel" type="Panel" parent="." unique_id=1377118338]
 layout_mode = 0
-offset_left = 185.0
-offset_top = 506.0
-offset_right = 967.0
-offset_bottom = 617.0
-theme_override_styles/panel = SubResource("StyleBoxFlat_hy57o")
+offset_left = 102.0
+offset_top = 392.0
+offset_right = 1102.0
+offset_bottom = 642.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_jix8l")
 
 [node name="Label" type="Label" parent="Panel" unique_id=255874535]
 layout_mode = 0
-offset_left = 50.0
-offset_top = 20.0
-offset_right = 90.0
-offset_bottom = 43.0
+offset_left = 185.0
+offset_top = 80.0
+offset_right = 225.0
+offset_bottom = 111.0
 theme_override_fonts/font = ExtResource("2_n23yb")
 theme_override_font_sizes/font_size = 24
 
 [node name="Button" type="Button" parent="Panel" unique_id=395880046]
 self_modulate = Color(1, 1, 1, 0)
 layout_mode = 0
-offset_right = 786.0
-offset_bottom = 113.0
+offset_left = 96.0
+offset_top = 55.0
+offset_right = 882.0
+offset_bottom = 205.0
