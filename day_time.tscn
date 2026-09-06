@@ -58,7 +58,7 @@ script = ExtResource("4_lfvbs")
 normal_texture = ExtResource("5_rvbxq")
 
 [node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/MagicWand" unique_id=1982025536]
-position = Vector2(3.0002441, 14.000061)
+position = Vector2(0, -15)
 rotation = -1.2391838
 scale = Vector2(0.73163843, 0.7291667)
 texture = ExtResource("5_pnqvc")

@@ -39,6 +39,7 @@ func _on_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 		#print(get_parent().wacks)
 		if $"Red_collision".is_visible_in_tree():
 			health -= 1
+			bounce_on_hit()
 			if (health == 0):
 				$"Red_collision".hide()
 				$"Red_collision".disabled = true
@@ -49,6 +50,7 @@ func _on_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 					
 		elif $"Yellow_collision".is_visible_in_tree():
 			health -= 1
+			bounce_on_hit()
 			if (health == 0):
 				$"Yellow_collision".hide()
 				$"Yellow_collision".disabled = true
@@ -78,6 +80,14 @@ func make_red():
 	$"Red_collision".disabled = false
 	health += 5
 	red_sound.play()
+	
+func bounce_on_hit():
+	var original_y = position.y
+	
+	var tween = create_tween()
+	tween.tween_property(self, "position:y", original_y + 15, 0.08)
+	tween.tween_property(self, "position:y", original_y - 5, 0.08)
+	tween.tween_property(self, "position:y", original_y, 0.1)
 
 #func game_over():
 	#print("Game Over")
