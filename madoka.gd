@@ -38,7 +38,7 @@ func _on_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 				$"Pink_collision".disabled = true
 				$"Red_collision".show()
 				$"Red_collision".disabled = false
-				const RED_HEALTH = 5
+				const RED_HEALTH = 3
 				health = RED_HEALTH
 		elif $"Red_collision".is_visible_in_tree():
 			health -= 1
@@ -65,15 +65,6 @@ func _on_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 		
 	
 
-func bounce_on_hit():
-	var original_y = position.y
-	
-	var tween = create_tween()
-	tween.tween_property(self, "position:y", original_y + 15, 0.08)
-	tween.tween_property(self, "position:y", original_y - 5, 0.08)
-	tween.tween_property(self, "position:y", original_y, 0.1)
-
-
 func make_pink():
 	assert($"Red_collision".is_visible_in_tree())
 	$"Red_collision".hide()
@@ -81,6 +72,6 @@ func make_pink():
 	
 	$"Pink_collision".show()
 	$"Pink_collision".disabled = false
-	health += 3
+	health = 3
 	pink_sound.play()
 	

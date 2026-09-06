@@ -5,7 +5,7 @@ var time_in_danger = 0
 const TRANSITION_TIME = 5
 @onready var yellow_sound: AudioStreamPlayer = $"yellow_sound"
 @onready var red_sound: AudioStreamPlayer = $"red_sound"
-
+@onready var rest_y: float = position.y
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -78,17 +78,28 @@ func make_red():
 	
 	$"Red_collision".show()
 	$"Red_collision".disabled = false
-	health += 5
+	health = 3
 	red_sound.play()
 	
-func bounce_on_hit():
-	var original_y = position.y
-	
-	var tween = create_tween()
-	tween.tween_property(self, "position:y", original_y + 15, 0.08)
-	tween.tween_property(self, "position:y", original_y - 5, 0.08)
-	tween.tween_property(self, "position:y", original_y, 0.1)
+#func bounce_on_hit():
+	#var original_y = position.y
+	#
+	#var tween = create_tween()
+	#tween.tween_property(self, "position:y", original_y + 15, 0.08)
+	#tween.tween_property(self, "position:y", original_y - 5, 0.08)
+	#tween.tween_property(self, "position:y", original_y, 0.1)
 
+var tween: Tween
+func bounce_on_hit():
+	if tween and tween.is_running():
+		tween.kill()
+		
+	tween = create_tween()
+	tween.tween_property(self, "position:y", rest_y + 15, 0.08)
+	tween.tween_property(self, "position:y", rest_y - 5, 0.08)
+	tween.tween_property(self, "position:y", rest_y, 0.1)
+	
+	
 #func game_over():
 	#print("Game Over")
 	#set_process(false)

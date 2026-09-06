@@ -41,7 +41,12 @@ func _on_dialogue_finished():
 const SPAWN_INTERVAL = 2.5
 var spawn_timer = 0
 var wack_timer = 0
+
+var timer_start = false
 func _process(delta: float) -> void:
+	if timer_start == false and not dialogue_playing:
+		$Timer.start()
+		timer_start = true
 	
 	#FLASHLIGHT BRIGHTNESS SECTION
 	var score_ratio: float = clamp(wacks / 20.0, 0, 0.1)
@@ -49,9 +54,9 @@ func _process(delta: float) -> void:
 
 	
 	#TIMER SECTION
-	if not $Timer.is_stopped():
+	if not $Timer.is_stopped() and timer_start == true:
 		#print("Time left: ", snapped($Timer.time_left, 1))	
-		$RichTextLabel.text = str(snapped($Timer.time_left, 1))
+		$CanvasLayer/RichTextLabel.text = str(snapped($Timer.time_left, 1))
 	
 	#WACK SECTION
 	wack_timer += delta
