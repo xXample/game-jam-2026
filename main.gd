@@ -1,9 +1,9 @@
 extends Node2D
 
-@onready var mon_1 = $"Monster_1"
-@onready var mon_2 = $"Monster_2"
-@onready var mon_3 = $"Monster_3"
-@onready var mon_4 = $"Monster_4"
+@onready var mon_1 = $"Madoka"
+@onready var mon_2 = $"Mami"
+@onready var mon_3 = $"Kyoko"
+@onready var mon_4 = $"Mirror"
 @onready var monsters = [mon_1, mon_2, mon_3, mon_4]
 var wacks = 20
 
@@ -22,9 +22,15 @@ var spawn_timer = 0
 var wack_timer = 0
 func _process(delta: float) -> void:
 	
+	#FLASHLIGHT BRIGHTNESS SECTION
+	var score_ratio: float = clamp(wacks / 20.0, 0, 0.3)
+	$"PointLight2D".energy = 20.0 * score_ratio
+
+	
 	#TIMER SECTION
 	if not $Timer.is_stopped():
-		print("Time left: ", snapped($Timer.time_left, 1))	
+		#print("Time left: ", snapped($Timer.time_left, 1))	
+		$RichTextLabel.text = str(snapped($Timer.time_left, 1))
 	
 	#WACK SECTION
 	wack_timer += delta
@@ -47,10 +53,15 @@ func spawn_monsters():
 	var roll = randf()
 	var amount = -1
 	
-	if roll <=   0.05: amount = 4
-	elif roll <= 0.20: amount = 3
-	elif roll <= 0.40: amount = 2
-	else: amount = 1
+	if (snapped($Timer.time_left, 1) <= 60):
+		if roll <=   0.05: amount = 4
+		elif roll <= 0.20: amount = 3
+		elif roll <= 0.40: amount = 2
+		else: amount = 1
+	else:
+		if roll <= 0.10: amount = 3
+		elif roll <= 0.20: amount = 2
+		else: amount = 1
 	
 	amount = min(amount, green_monsters.size())
 	for i in range(amount):

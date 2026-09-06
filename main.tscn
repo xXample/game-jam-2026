@@ -2,73 +2,122 @@
 
 [ext_resource type="Script" uid="uid://dd7iyriboctgt" path="res://main.gd" id="1_0xm2m"]
 [ext_resource type="Script" uid="uid://dgmkti8ou64v6" path="res://clickable.gd" id="1_ig7tw"]
+[ext_resource type="Texture2D" uid="uid://bopacjt1woloh" path="res://png/flashlight-text.jpg" id="3_1bvp3"]
+[ext_resource type="Script" uid="uid://nx1kpbp3tcp2" path="res://madoka.gd" id="4_7mycd"]
+[ext_resource type="Script" uid="uid://b1s35vhshmga4" path="res://point_light_2d.gd" id="4_lquwl"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_k30ep"]
-size = Vector2(209, 182)
+size = Vector2(131.5, 110)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ycxyu"]
-size = Vector2(207.5, 158.5)
+size = Vector2(130.5, 101.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_b0why"]
-size = Vector2(202, 150.5)
+size = Vector2(127, 82.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vjc5p"]
+size = Vector2(130, 92.125)
 
 [node name="Main" type="Node2D" unique_id=520729202]
 script = ExtResource("1_0xm2m")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1274843514]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -1.0
+offset_top = 1.0
+offset_right = 1979.0
+offset_bottom = 1041.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(1, 0.5529412, 1, 1)
+
+[node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=1016719170]
+color = Color(0.108053125, 0.108053125, 0.114203185, 1)
+
+[node name="PointLight2D" type="PointLight2D" parent="." unique_id=202398473]
+position = Vector2(-1, 0)
+energy = 0.2
+texture = ExtResource("3_1bvp3")
+offset = Vector2(-0.24, 0)
+texture_scale = 2.0
+script = ExtResource("4_lquwl")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=465177587]
+offset_left = 1070.0
+offset_top = 9.0
+offset_right = 1152.0
+offset_bottom = 60.0
+theme_override_font_sizes/normal_font_size = 32
+text = "120s"
 
 [node name="Timer" type="Timer" parent="." unique_id=899615212]
 wait_time = 120.0
 one_shot = true
 autostart = true
 
-[node name="Monster_1" type="Area2D" parent="." unique_id=1528871679]
+[node name="Madoka" type="Area2D" parent="." unique_id=1528871679]
 position = Vector2(132, 40)
-script = ExtResource("1_ig7tw")
+script = ExtResource("4_7mycd")
 
-[node name="Green_collision" type="CollisionShape2D" parent="Monster_1" unique_id=937704843]
-position = Vector2(2, 125)
+[node name="Green_collision" type="CollisionShape2D" parent="Madoka" unique_id=937704843]
+position = Vector2(-35.75, 88)
 shape = SubResource("RectangleShape2D_k30ep")
 
-[node name="ColorRect" type="ColorRect" parent="Monster_1/Green_collision" unique_id=2122062879]
-offset_left = -101.0
-offset_top = -95.0
-offset_right = 106.0
-offset_bottom = 89.0
+[node name="ColorRect" type="ColorRect" parent="Madoka/Green_collision" unique_id=2122062879]
+offset_left = -69.25
+offset_top = -54.0
+offset_right = 64.75
+offset_bottom = 54.0
 mouse_filter = 2
 color = Color(0, 1, 0, 1)
 
-[node name="Yellow_collision" type="CollisionShape2D" parent="Monster_1" unique_id=604124941]
-position = Vector2(4.25, 328.75)
+[node name="Yellow_collision" type="CollisionShape2D" parent="Madoka" unique_id=604124941]
+position = Vector2(-35, 210)
 shape = SubResource("RectangleShape2D_ycxyu")
 
-[node name="ColorRect" type="ColorRect" parent="Monster_1/Yellow_collision" unique_id=1547769829]
-offset_left = -105.25
-offset_top = -93.75
-offset_right = 101.75
-offset_bottom = 90.25
+[node name="ColorRect" type="ColorRect" parent="Madoka/Yellow_collision" unique_id=1547769829]
+offset_left = -53.0
+offset_top = -48.0
+offset_right = 60.0
+offset_bottom = 43.0
 mouse_filter = 2
 color = Color(1, 1, 0, 1)
 
-[node name="Red_collision" type="CollisionShape2D" parent="Monster_1" unique_id=2027534067]
-position = Vector2(6, 506.75)
+[node name="Red_collision" type="CollisionShape2D" parent="Madoka" unique_id=2027534067]
+position = Vector2(-33, 321)
 shape = SubResource("RectangleShape2D_b0why")
 
-[node name="ColorRect" type="ColorRect" parent="Monster_1/Red_collision" unique_id=834639529]
-offset_left = -105.25
-offset_top = -93.75
-offset_right = 101.75
-offset_bottom = 90.25
+[node name="ColorRect" type="ColorRect" parent="Madoka/Red_collision" unique_id=834639529]
+offset_left = -59.0
+offset_top = -38.0
+offset_right = 61.0
+offset_bottom = 37.0
 mouse_filter = 2
 color = Color(1, 0, 0, 1)
 
-[node name="Monster_2" type="Area2D" parent="." unique_id=1038749568]
+[node name="Pink_collision" type="CollisionShape2D" parent="Madoka" unique_id=226126521]
+position = Vector2(-32, 428.9375)
+shape = SubResource("RectangleShape2D_vjc5p")
+
+[node name="ColorRect" type="ColorRect" parent="Madoka/Pink_collision" unique_id=550469678]
+offset_left = -57.0
+offset_top = -39.9375
+offset_right = 57.0
+offset_bottom = 40.0625
+color = Color(0.9279861, 3.0611158e-05, 0.66056615, 1)
+
+[node name="Mami" type="Area2D" parent="." unique_id=1038749568]
 position = Vector2(390, 43)
 script = ExtResource("1_ig7tw")
 
-[node name="Green_collision" type="CollisionShape2D" parent="Monster_2" unique_id=2115689485]
+[node name="Green_collision" type="CollisionShape2D" parent="Mami" unique_id=2115689485]
 position = Vector2(2, 125)
 shape = SubResource("RectangleShape2D_k30ep")
 
-[node name="ColorRect" type="ColorRect" parent="Monster_2/Green_collision" unique_id=387288244]
+[node name="ColorRect" type="ColorRect" parent="Mami/Green_collision" unique_id=387288244]
 offset_left = -102.0
 offset_top = -90.0
 offset_right = 105.0
@@ -76,11 +125,11 @@ offset_bottom = 94.0
 mouse_filter = 2
 color = Color(0, 1, 0, 1)
 
-[node name="Yellow_collision" type="CollisionShape2D" parent="Monster_2" unique_id=245474747]
+[node name="Yellow_collision" type="CollisionShape2D" parent="Mami" unique_id=245474747]
 position = Vector2(4.25, 328.75)
 shape = SubResource("RectangleShape2D_ycxyu")
 
-[node name="ColorRect" type="ColorRect" parent="Monster_2/Yellow_collision" unique_id=1685404393]
+[node name="ColorRect" type="ColorRect" parent="Mami/Yellow_collision" unique_id=1685404393]
 offset_left = -105.25
 offset_top = -93.75
 offset_right = 101.75
@@ -88,11 +137,11 @@ offset_bottom = 90.25
 mouse_filter = 2
 color = Color(1, 1, 0, 1)
 
-[node name="Red_collision" type="CollisionShape2D" parent="Monster_2" unique_id=59354043]
+[node name="Red_collision" type="CollisionShape2D" parent="Mami" unique_id=59354043]
 position = Vector2(6, 506.75)
 shape = SubResource("RectangleShape2D_b0why")
 
-[node name="ColorRect" type="ColorRect" parent="Monster_2/Red_collision" unique_id=1233730193]
+[node name="ColorRect" type="ColorRect" parent="Mami/Red_collision" unique_id=1233730193]
 offset_left = -105.25
 offset_top = -93.75
 offset_right = 101.75
@@ -100,15 +149,15 @@ offset_bottom = 90.25
 mouse_filter = 2
 color = Color(1, 0, 0, 1)
 
-[node name="Monster_3" type="Area2D" parent="." unique_id=352706588]
+[node name="Kyoko" type="Area2D" parent="." unique_id=352706588]
 position = Vector2(645, 44)
 script = ExtResource("1_ig7tw")
 
-[node name="Green_collision" type="CollisionShape2D" parent="Monster_3" unique_id=1681073107]
+[node name="Green_collision" type="CollisionShape2D" parent="Kyoko" unique_id=1681073107]
 position = Vector2(2, 125)
 shape = SubResource("RectangleShape2D_k30ep")
 
-[node name="ColorRect" type="ColorRect" parent="Monster_3/Green_collision" unique_id=1005605455]
+[node name="ColorRect" type="ColorRect" parent="Kyoko/Green_collision" unique_id=1005605455]
 offset_left = -102.0
 offset_top = -90.0
 offset_right = 105.0
@@ -116,11 +165,11 @@ offset_bottom = 94.0
 mouse_filter = 2
 color = Color(0, 1, 0, 1)
 
-[node name="Yellow_collision" type="CollisionShape2D" parent="Monster_3" unique_id=1761422336]
+[node name="Yellow_collision" type="CollisionShape2D" parent="Kyoko" unique_id=1761422336]
 position = Vector2(4.25, 328.75)
 shape = SubResource("RectangleShape2D_ycxyu")
 
-[node name="ColorRect" type="ColorRect" parent="Monster_3/Yellow_collision" unique_id=1391185330]
+[node name="ColorRect" type="ColorRect" parent="Kyoko/Yellow_collision" unique_id=1391185330]
 offset_left = -105.25
 offset_top = -93.75
 offset_right = 101.75
@@ -128,11 +177,11 @@ offset_bottom = 90.25
 mouse_filter = 2
 color = Color(1, 1, 0, 1)
 
-[node name="Red_collision" type="CollisionShape2D" parent="Monster_3" unique_id=873957732]
+[node name="Red_collision" type="CollisionShape2D" parent="Kyoko" unique_id=873957732]
 position = Vector2(6, 506.75)
 shape = SubResource("RectangleShape2D_b0why")
 
-[node name="ColorRect" type="ColorRect" parent="Monster_3/Red_collision" unique_id=1932613068]
+[node name="ColorRect" type="ColorRect" parent="Kyoko/Red_collision" unique_id=1932613068]
 offset_left = -105.25
 offset_top = -93.75
 offset_right = 101.75
@@ -140,15 +189,15 @@ offset_bottom = 90.25
 mouse_filter = 2
 color = Color(1, 0, 0, 1)
 
-[node name="Monster_4" type="Area2D" parent="." unique_id=726571365]
+[node name="Mirror" type="Area2D" parent="." unique_id=726571365]
 position = Vector2(917, 41)
 script = ExtResource("1_ig7tw")
 
-[node name="Green_collision" type="CollisionShape2D" parent="Monster_4" unique_id=654981286]
+[node name="Green_collision" type="CollisionShape2D" parent="Mirror" unique_id=654981286]
 position = Vector2(2, 125)
 shape = SubResource("RectangleShape2D_k30ep")
 
-[node name="ColorRect" type="ColorRect" parent="Monster_4/Green_collision" unique_id=1569342334]
+[node name="ColorRect" type="ColorRect" parent="Mirror/Green_collision" unique_id=1569342334]
 offset_left = -102.0
 offset_top = -90.0
 offset_right = 105.0
@@ -156,11 +205,11 @@ offset_bottom = 94.0
 mouse_filter = 2
 color = Color(0, 1, 0, 1)
 
-[node name="Yellow_collision" type="CollisionShape2D" parent="Monster_4" unique_id=1646963176]
+[node name="Yellow_collision" type="CollisionShape2D" parent="Mirror" unique_id=1646963176]
 position = Vector2(4.25, 328.75)
 shape = SubResource("RectangleShape2D_ycxyu")
 
-[node name="ColorRect" type="ColorRect" parent="Monster_4/Yellow_collision" unique_id=485426682]
+[node name="ColorRect" type="ColorRect" parent="Mirror/Yellow_collision" unique_id=485426682]
 offset_left = -105.25
 offset_top = -93.75
 offset_right = 101.75
@@ -168,11 +217,11 @@ offset_bottom = 90.25
 mouse_filter = 2
 color = Color(1, 1, 0, 1)
 
-[node name="Red_collision" type="CollisionShape2D" parent="Monster_4" unique_id=2014869768]
+[node name="Red_collision" type="CollisionShape2D" parent="Mirror" unique_id=2014869768]
 position = Vector2(6, 506.75)
 shape = SubResource("RectangleShape2D_b0why")
 
-[node name="ColorRect" type="ColorRect" parent="Monster_4/Red_collision" unique_id=577544779]
+[node name="ColorRect" type="ColorRect" parent="Mirror/Red_collision" unique_id=577544779]
 offset_left = -105.25
 offset_top = -93.75
 offset_right = 101.75
@@ -181,7 +230,7 @@ mouse_filter = 2
 color = Color(1, 0, 0, 1)
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
-[connection signal="input_event" from="Monster_1" to="Monster_1" method="_on_input_event"]
-[connection signal="input_event" from="Monster_2" to="Monster_2" method="_on_input_event"]
-[connection signal="input_event" from="Monster_3" to="Monster_3" method="_on_input_event"]
-[connection signal="input_event" from="Monster_4" to="Monster_4" method="_on_input_event"]
+[connection signal="input_event" from="Madoka" to="Madoka" method="_on_input_event"]
+[connection signal="input_event" from="Mami" to="Mami" method="_on_input_event"]
+[connection signal="input_event" from="Kyoko" to="Kyoko" method="_on_input_event"]
+[connection signal="input_event" from="Mirror" to="Mirror" method="_on_input_event"]
