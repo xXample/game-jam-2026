@@ -12,7 +12,9 @@
 [ext_resource type="Texture2D" uid="uid://bsbmc5y4lok41" path="res://night-time-png/door.png" id="6_vivmo"]
 [ext_resource type="Texture2D" uid="uid://diundtlb34klc" path="res://night-time-png/curtains.png" id="7_2cqfq"]
 [ext_resource type="Texture2D" uid="uid://b4o0kheiww4ny" path="res://night-time-png/Mami.png" id="7_getpj"]
+[ext_resource type="AudioStream" uid="uid://bfnx28tm6uss4" path="res://audio/Mami_1.wav" id="7_seu75"]
 [ext_resource type="Texture2D" uid="uid://h5qap1yhuc3c" path="res://night-time-png/mirror-1.png" id="8_dg77c"]
+[ext_resource type="AudioStream" uid="uid://c7muwon6nh5c0" path="res://audio/Mami_2.wav" id="8_htxhm"]
 [ext_resource type="Texture2D" uid="uid://bqimfugw6fnor" path="res://night-time-png/cabinet.png" id="8_yaehf"]
 [ext_resource type="Texture2D" uid="uid://ojy7lfrlhpu1" path="res://night-time-png/mirror-2.png" id="9_ycdy4"]
 [ext_resource type="Texture2D" uid="uid://wjf62sger0y4" path="res://night-time-png/tray.png" id="10_w48qg"]
@@ -21,7 +23,14 @@
 [ext_resource type="Texture2D" uid="uid://bsk7bjfmjrkxa" path="res://night-time-png/background-4.png" id="13_074og"]
 [ext_resource type="Texture2D" uid="uid://cmxp4gi0brobb" path="res://night-time-png/madoka-2.png" id="13_82xsv"]
 [ext_resource type="Texture2D" uid="uid://d0thk0qrp0gvf" path="res://night-time-png/madoka-3.png" id="14_82xsv"]
+[ext_resource type="AudioStream" uid="uid://dyaki08p5fj0k" path="res://audio/Madoka_1.wav" id="16_jq2sk"]
+[ext_resource type="AudioStream" uid="uid://c2iwurnxfmb37" path="res://audio/Madoka_2.wav" id="17_4k2k6"]
+[ext_resource type="AudioStream" uid="uid://cnebiyiaxj8o5" path="res://audio/Madoka_3.wav" id="18_0rl1p"]
+[ext_resource type="AudioStream" uid="uid://pes4jiwbopvt" path="res://audio/Kyoko_1.wav" id="22_1u8w0"]
 [ext_resource type="Texture2D" uid="uid://8lh8mr4efmj8" path="res://night-time-png/Kyoko.png" id="22_ryguw"]
+[ext_resource type="AudioStream" uid="uid://dj741nhfxm7tx" path="res://audio/Kyoko_2.wav" id="23_0odxb"]
+[ext_resource type="AudioStream" uid="uid://b0foql4l3wnwm" path="res://audio/Mirror_1.wav" id="30_ok6jj"]
+[ext_resource type="AudioStream" uid="uid://bclqrb2ol6v8p" path="res://audio/Mirror_2.wav" id="31_facbu"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_k30ep"]
 size = Vector2(131.5, 110)
@@ -104,6 +113,12 @@ expand_mode = 1
 [node name="Mami" type="Area2D" parent="." unique_id=1038749568]
 position = Vector2(390, 43)
 script = ExtResource("1_ig7tw")
+
+[node name="yellow_sound" type="AudioStreamPlayer" parent="Mami" unique_id=48533503]
+stream = ExtResource("7_seu75")
+
+[node name="red_sound" type="AudioStreamPlayer" parent="Mami" unique_id=579663704]
+stream = ExtResource("8_htxhm")
 
 [node name="Green_collision" type="CollisionShape2D" parent="Mami" unique_id=2115689485]
 position = Vector2(2, 125)
@@ -196,6 +211,15 @@ expand_mode = 1
 visible = false
 position = Vector2(132, 40)
 script = ExtResource("4_7mycd")
+
+[node name="yellow_sound" type="AudioStreamPlayer" parent="Madoka" unique_id=1794707588]
+stream = ExtResource("16_jq2sk")
+
+[node name="red_sound" type="AudioStreamPlayer" parent="Madoka" unique_id=1346272945]
+stream = ExtResource("17_4k2k6")
+
+[node name="pink_sound" type="AudioStreamPlayer" parent="Madoka" unique_id=1242703168]
+stream = ExtResource("18_0rl1p")
 
 [node name="Green_collision" type="CollisionShape2D" parent="Madoka" unique_id=937704843]
 position = Vector2(-35.75, 88)
@@ -306,6 +330,12 @@ autostart = true
 position = Vector2(645, 44)
 script = ExtResource("1_ig7tw")
 
+[node name="yellow_sound" type="AudioStreamPlayer" parent="Kyoko" unique_id=381882465]
+stream = ExtResource("22_1u8w0")
+
+[node name="red_sound" type="AudioStreamPlayer" parent="Kyoko" unique_id=1346034269]
+stream = ExtResource("23_0odxb")
+
 [node name="Green_collision" type="CollisionShape2D" parent="Kyoko" unique_id=1681073107]
 visible = false
 position = Vector2(2, 125)
@@ -359,6 +389,12 @@ texture = ExtResource("22_ryguw")
 visible = false
 position = Vector2(917, 41)
 script = ExtResource("1_ig7tw")
+
+[node name="yellow_sound" type="AudioStreamPlayer" parent="Mirror" unique_id=910253537]
+stream = ExtResource("30_ok6jj")
+
+[node name="red_sound" type="AudioStreamPlayer" parent="Mirror" unique_id=1881400538]
+stream = ExtResource("31_facbu")
 
 [node name="Green_collision" type="CollisionShape2D" parent="Mirror" unique_id=654981286]
 position = Vector2(2, 125)

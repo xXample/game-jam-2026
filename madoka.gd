@@ -1,5 +1,7 @@
 extends "res://clickable.gd"
 
+@onready var pink_sound: AudioStreamPlayer = $"pink_sound"
+
 func _ready() -> void:
 	super()
 	$"Pink_collision".hide()
@@ -68,4 +70,5 @@ func make_pink():
 	$"Pink_collision".show()
 	$"Pink_collision".disabled = false
 	health += 3
+	pink_sound.play()
 	
