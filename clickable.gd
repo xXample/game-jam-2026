@@ -4,6 +4,9 @@ var health = 0
 var time_in_danger = 0
 const TRANSITION_TIME = 5
 
+@onready var audio_player: AudioStreamPlayer = $AudioStreamPlayer
+
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	#print("game start")
@@ -64,6 +67,8 @@ func make_yellow():
 	$"Yellow_collision".show()
 	$"Yellow_collision".disabled = false
 	health = 3
+	
+	
 
 func make_red():
 	assert($"Yellow_collision".is_visible_in_tree())
