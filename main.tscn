@@ -2,9 +2,17 @@
 
 [ext_resource type="Script" uid="uid://dd7iyriboctgt" path="res://main.gd" id="1_0xm2m"]
 [ext_resource type="Script" uid="uid://dgmkti8ou64v6" path="res://clickable.gd" id="1_ig7tw"]
-[ext_resource type="Texture2D" uid="uid://bopacjt1woloh" path="res://png/flashlight-text.jpg" id="3_1bvp3"]
+[ext_resource type="Texture2D" uid="uid://bbs708a38kg0h" path="res://night-time-png/background.png" id="2_7mycd"]
+[ext_resource type="Texture2D" uid="uid://dqamv55a0tt1n" path="res://night-time-png/background-2.png" id="3_dg77c"]
 [ext_resource type="Script" uid="uid://nx1kpbp3tcp2" path="res://madoka.gd" id="4_7mycd"]
 [ext_resource type="Script" uid="uid://b1s35vhshmga4" path="res://point_light_2d.gd" id="4_lquwl"]
+[ext_resource type="Texture2D" uid="uid://de6l383d6win4" path="res://night-time-png/bed.png" id="4_ycdy4"]
+[ext_resource type="Texture2D" uid="uid://b73igsbexnyqx" path="res://night-time-png/door-splatter.png" id="5_w48qg"]
+[ext_resource type="Texture2D" uid="uid://bsbmc5y4lok41" path="res://night-time-png/door.png" id="6_vivmo"]
+[ext_resource type="Texture2D" uid="uid://diundtlb34klc" path="res://night-time-png/curtains.png" id="7_2cqfq"]
+[ext_resource type="Texture2D" uid="uid://h5qap1yhuc3c" path="res://night-time-png/mirror-1.png" id="8_dg77c"]
+[ext_resource type="Texture2D" uid="uid://bqimfugw6fnor" path="res://night-time-png/cabinet.png" id="8_yaehf"]
+[ext_resource type="Texture2D" uid="uid://ojy7lfrlhpu1" path="res://night-time-png/mirror-2.png" id="9_ycdy4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_k30ep"]
 size = Vector2(131.5, 110)
@@ -21,30 +29,6 @@ size = Vector2(130, 92.125)
 [node name="Main" type="Node2D" unique_id=520729202]
 script = ExtResource("1_0xm2m")
 
-[node name="ColorRect" type="ColorRect" parent="." unique_id=1274843514]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -1.0
-offset_top = 1.0
-offset_right = 1979.0
-offset_bottom = 1041.0
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 2
-color = Color(1, 0.5529412, 1, 1)
-
-[node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=1016719170]
-color = Color(0.108053125, 0.108053125, 0.114203185, 1)
-
-[node name="PointLight2D" type="PointLight2D" parent="." unique_id=202398473]
-position = Vector2(-1, 0)
-energy = 0.2
-texture = ExtResource("3_1bvp3")
-offset = Vector2(-0.24, 0)
-texture_scale = 2.0
-script = ExtResource("4_lquwl")
-
 [node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=465177587]
 offset_left = 1070.0
 offset_top = 9.0
@@ -53,12 +37,88 @@ offset_bottom = 60.0
 theme_override_font_sizes/normal_font_size = 32
 text = "120s"
 
+[node name="background-1" type="TextureRect" parent="." unique_id=1587891533]
+offset_right = 1160.0
+offset_bottom = 656.0
+texture = ExtResource("2_7mycd")
+expand_mode = 1
+
+[node name="door-splatter" type="TextureRect" parent="background-1" unique_id=1645199415]
+layout_mode = 0
+offset_right = 1166.0
+offset_bottom = 654.0
+texture = ExtResource("5_w48qg")
+expand_mode = 1
+
+[node name="night-door" type="TextureRect" parent="background-1/door-splatter" unique_id=1187885862]
+layout_mode = 0
+offset_right = 1166.0
+offset_bottom = 654.0
+texture = ExtResource("6_vivmo")
+expand_mode = 1
+
+[node name="bed" type="TextureRect" parent="background-1" unique_id=599626735]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 8.0
+offset_right = 1151.0
+offset_bottom = 652.0
+texture = ExtResource("4_ycdy4")
+expand_mode = 1
+
+[node name="curtains" type="TextureRect" parent="background-1" unique_id=172651445]
+layout_mode = 0
+offset_right = 1160.0
+offset_bottom = 648.0
+texture = ExtResource("7_2cqfq")
+expand_mode = 1
+
+[node name="cabinet" type="TextureRect" parent="background-1" unique_id=1644093528]
+layout_mode = 0
+offset_right = 1160.0
+offset_bottom = 648.0
+texture = ExtResource("8_yaehf")
+expand_mode = 1
+
+[node name="mirror-1" type="TextureRect" parent="background-1" unique_id=858653726]
+layout_mode = 0
+offset_right = 1160.0
+offset_bottom = 648.0
+texture = ExtResource("8_dg77c")
+expand_mode = 1
+
+[node name="mirror-2" type="TextureRect" parent="background-1" unique_id=2122793531]
+layout_mode = 0
+offset_right = 1160.0
+offset_bottom = 648.0
+texture = ExtResource("9_ycdy4")
+expand_mode = 1
+
+[node name="background-2" type="TextureRect" parent="." unique_id=587005447]
+offset_right = 1158.0
+offset_bottom = 655.0
+texture = ExtResource("3_dg77c")
+expand_mode = 1
+
+[node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=1016719170]
+visible = false
+color = Color(0.104499996, 0.104499996, 0.11, 0.7372549)
+
+[node name="PointLight2D" type="PointLight2D" parent="." unique_id=202398473]
+position = Vector2(-1, 0)
+energy = 0.2
+texture = ExtResource("8_dg77c")
+offset = Vector2(-0.24, 0)
+texture_scale = 2.0
+script = ExtResource("4_lquwl")
+
 [node name="Timer" type="Timer" parent="." unique_id=899615212]
 wait_time = 120.0
 one_shot = true
 autostart = true
 
 [node name="Madoka" type="Area2D" parent="." unique_id=1528871679]
+visible = false
 position = Vector2(132, 40)
 script = ExtResource("4_7mycd")
 
@@ -110,6 +170,7 @@ offset_bottom = 40.0625
 color = Color(0.9279861, 3.0611158e-05, 0.66056615, 1)
 
 [node name="Mami" type="Area2D" parent="." unique_id=1038749568]
+visible = false
 position = Vector2(390, 43)
 script = ExtResource("1_ig7tw")
 
@@ -150,6 +211,7 @@ mouse_filter = 2
 color = Color(1, 0, 0, 1)
 
 [node name="Kyoko" type="Area2D" parent="." unique_id=352706588]
+visible = false
 position = Vector2(645, 44)
 script = ExtResource("1_ig7tw")
 
@@ -190,6 +252,7 @@ mouse_filter = 2
 color = Color(1, 0, 0, 1)
 
 [node name="Mirror" type="Area2D" parent="." unique_id=726571365]
+visible = false
 position = Vector2(917, 41)
 script = ExtResource("1_ig7tw")
 
