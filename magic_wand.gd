@@ -6,6 +6,7 @@ extends Area2D
 func _ready():
 	sprite.texture = normal_texture
 	input_pickable = false   # <-- add this
+	Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
 
 func _input(event):
 	if event is InputEventMouseMotion:

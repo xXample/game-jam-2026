@@ -4,12 +4,19 @@ extends Node2D
 @onready var mon_2 = $"Mami"
 @onready var mon_3 = $"Kyoko"
 @onready var mon_4 = $"Mirror"
-#@onready var monsters = [mon_1, mon_2, mon_3, mon_4]
-@onready var monsters = [mon_2]
+@onready var dialogue_box = $CanvasLayer/DialogueBox
+
+@onready var monsters = [mon_1, mon_2, mon_3, mon_4]
+#@onready var monsters = [mon_2]
 var wacks = 20
 
-func _ready() -> void:	
-	pass
+func _ready():
+	
+	dialogue_box.show_dialogue([
+		"What happened? There's monsters!!!",
+		"Good thing I remember how to use my wand.",
+		"(Click the three dolls with the wand)"
+	])
 
 func game_over():
 	get_tree().change_scene_to_file("res://Death.tscn")
@@ -24,7 +31,7 @@ var wack_timer = 0
 func _process(delta: float) -> void:
 	
 	#FLASHLIGHT BRIGHTNESS SECTION
-	var score_ratio: float = clamp(wacks / 20.0, 0, 0.3)
+	var score_ratio: float = clamp(wacks / 20.0, 0, 0.1)
 	$"PointLight2D".energy = 20.0 * score_ratio
 
 	
