@@ -1,7 +1,6 @@
 extends "res://clickable.gd"
 
 @onready var pink_sound: AudioStreamPlayer = $"pink_sound"
-
 func _ready() -> void:
 	super()
 	$"Pink_collision".hide()
@@ -12,8 +11,9 @@ func _process(delta: float) -> void:
 		time_in_danger = 0
 		return
 	
+	var MADOKA_TRANSITION_TIME = 4
 	time_in_danger += delta
-	if (time_in_danger >= TRANSITION_TIME):
+	if (time_in_danger >= MADOKA_TRANSITION_TIME):
 		if ($"Yellow_collision".is_visible_in_tree()):
 			make_red()
 			time_in_danger = 0
